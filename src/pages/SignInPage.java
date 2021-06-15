@@ -8,6 +8,7 @@ public class SignInPage {
 	WebDriver driver;
 	WebElement emailInputField;
 	WebElement passwordInputField;
+	WebElement textWrongCredentialsLabel;
 	
 	WebElement signInButton;
 	WebElement signOutButton;
@@ -41,7 +42,7 @@ public class SignInPage {
 	public WebElement getSignOutButton() {
 		return driver.findElement(By.xpath("//*[@id=\"header\"]/div[2]/div/div/nav/div[2]/a"));
 	}
-	public String textFromLogOutButton() {
+	public String textFromSignOutButton() {
 		return this.getSignOutButton().getText();
 	}
 	public void signOutButtonClick() {

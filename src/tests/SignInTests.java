@@ -23,8 +23,7 @@ public class SignInTests extends BaseTests{
 		signInPage.signInButtonClick();
 		//Thread.sleep(2000);
 		String textForAssertion = citacIzExcela.getStringData("TC1", 8, 2);
-		
-		String actualText = signInPage.textFromLogOutButton();
+		String actualText = signInPage.textFromSignOutButton();
 		assertEquals(actualText, textForAssertion);
 	}
 	
@@ -87,13 +86,15 @@ public class SignInTests extends BaseTests{
 		homePage.signInButtonClick();
 		String email = citacIzExcela.getStringData("TC6", 4, 2);
 		String password = citacIzExcela.getStringData("TC6", 5, 2);
+		//String email = String.valueOf(citacIzExcela.getIntegerData("TC6", 4, 2));
+		//String password = String.valueOf(citacIzExcela.getIntegerData("TC6", 5, 2));
 		signInPage.insertEmail(email);
 		signInPage.insertPassword(password);
 		signInPage.signInButtonClick();
-		//Thread.sleep(2000);
-		signInPage.signOutButtonClick();
-		String textForAssertion = citacIzExcela.getStringData("TC6", 9, 2);
-		String actualText = signInPage.textFromSignInButton();
+		Thread.sleep(2000);
+	
+		String textForAssertion = citacIzExcela.getStringData("TC6", 8, 2);
+		String actualText = signInPage.textWrongCredentialsLabel();
 		assertEquals(actualText, textForAssertion);
 	}
 	@Test(priority = 35)
@@ -105,9 +106,9 @@ public class SignInTests extends BaseTests{
 		signInPage.insertPassword(password);
 		signInPage.signInButtonClick();
 		//Thread.sleep(2000);
-		signInPage.signOutButtonClick();
-		String textForAssertion = citacIzExcela.getStringData("TC7", 9, 2);
-		String actualText = signInPage.textFromSignInButton();
+	
+		String textForAssertion = citacIzExcela.getStringData("TC7", 8, 2);
+		String actualText = signInPage.textWrongCredentialsLabel();
 		assertEquals(actualText, textForAssertion);
 	}
 	@Test(priority = 40)

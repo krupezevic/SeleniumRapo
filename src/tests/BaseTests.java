@@ -8,7 +8,12 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 import pages.HomePage;
+import pages.MyAccountPage;
+import pages.MyAddressesPage;
+import pages.MyPersonalInfoPage;
+import pages.MyWishlistsPage;
 import pages.SignInPage;
+import pages.UpdateAddressPage;
 
 
 public class BaseTests {
@@ -17,22 +22,32 @@ public class BaseTests {
 	SignInPage signInPage;
 	ExcelReader citacIzExcela;
 	String homeUrl;
-	
+	MyAccountPage myAccountPage;
+	MyAddressesPage myAddressesPage;
+    MyPersonalInfoPage myPersonalInfoPage;
+    MyWishlistsPage myWishlistsPage;
+    UpdateAddressPage updateAddressPage;
+    
 	@BeforeClass
-	public void preSihTestova() throws IOException {
+	public void preSvihTestova() throws IOException {
 		System.setProperty("webdriver.chrome.driver", "driver-lib\\chromedriver.exe");
 		driver = new ChromeDriver();
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		//mainNavigation = new MainNavigation(driver);
-		//myAccountPage =  new MyAccountPage(driver);
+		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	
 		homePage =  new HomePage(driver);
 		signInPage = new SignInPage(driver);
+		myAccountPage = new MyAccountPage(driver);
+		myAddressesPage = new MyAddressesPage(driver);
+		myPersonalInfoPage = new MyPersonalInfoPage(driver);
+		myWishlistsPage = new MyWishlistsPage(driver);
+		updateAddressPage = new UpdateAddressPage(driver);
+		
 		citacIzExcela =  new ExcelReader("data/seleniumR.xlsx");
 		homeUrl = "http://automationpractice.com/index.php";
 	}
 	@AfterClass
-	public void posleSihTestova() {
+	public void posleSvihTestova() {
 		driver.close();
 	}
 }

@@ -26,9 +26,7 @@ public class MyPersonalInfoPage {
 	 		super();
 	 		this.driver = driver;
 	 	}
-	    // public WebElement getPersonalInfoTab() {
-	 //		return driver.findElement(By.linkText("MY PERSONAL INFORMATION"));
-	 	//}
+	  
 
 	 	public WebElement getMrRadioButton() {
 	 		return driver.findElement(By.id("id_gender1"));
@@ -75,16 +73,7 @@ public class MyPersonalInfoPage {
 	 	public void MrsRadioButtonClick() {
 	 		this.getMrsRadioButton().click();
 	 	}
-/*
-	 	public boolean isMrChecked() {
-	 		return this.getMrRadioButton().isSelected();
 
-	 	}
-
-	 	public boolean isMrsChecked() {
-	 		return this.getMrsRadioButton().isSelected();
-
-	 	}*/
 	 	public boolean isSelectedMr() {
 			return this.getSelectedMr().getAttribute("class").equals("checked");
 		}

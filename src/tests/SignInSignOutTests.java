@@ -6,7 +6,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class SignInTests extends BaseTests{
+public class SignInSignOutTests extends BaseTests{
 	
 	@BeforeMethod
 	public void preSvakogTesta() {
@@ -21,7 +21,7 @@ public class SignInTests extends BaseTests{
 		signInPage.insertEmail(email);
 		signInPage.insertPassword(password);
 		signInPage.signInButtonClick();
-		//Thread.sleep(2000);
+		
 		String textForAssertion = citacIzExcela.getStringData("TC1", 8, 2);
 		String actualText = signInPage.textFromSignOutButton();
 		assertEquals(actualText, textForAssertion);
@@ -35,7 +35,7 @@ public class SignInTests extends BaseTests{
 		signInPage.insertEmail(email);
 		signInPage.insertPassword(password);
 		signInPage.signInButtonClick();
-		//Thread.sleep(2000);
+		
 		String textForAssertion = citacIzExcela.getStringData("TC2", 8, 2);
 		String actualText = signInPage.textWrongCredentialsLabel();
 		assertEquals(actualText, textForAssertion);
@@ -75,7 +75,7 @@ public class SignInTests extends BaseTests{
 		signInPage.insertEmail(email);
 		signInPage.insertPassword(password);
 		signInPage.signInButtonClick();
-		//Thread.sleep(2000);
+		
 		String textForAssertion = citacIzExcela.getStringData("TC5", 8, 2);
 		String actualText = signInPage.textWrongCredentialsLabel();
 		assertEquals(actualText, textForAssertion);
@@ -92,7 +92,6 @@ public class SignInTests extends BaseTests{
 		signInPage.insertPassword(password);
 		signInPage.signInButtonClick();
 		Thread.sleep(2000);
-	
 		String textForAssertion = citacIzExcela.getStringData("TC6", 8, 2);
 		String actualText = signInPage.textWrongCredentialsLabel();
 		assertEquals(actualText, textForAssertion);
@@ -105,8 +104,7 @@ public class SignInTests extends BaseTests{
 		signInPage.insertEmail(email);
 		signInPage.insertPassword(password);
 		signInPage.signInButtonClick();
-		//Thread.sleep(2000);
-	
+		
 		String textForAssertion = citacIzExcela.getStringData("TC7", 8, 2);
 		String actualText = signInPage.textWrongCredentialsLabel();
 		assertEquals(actualText, textForAssertion);

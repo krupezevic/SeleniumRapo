@@ -57,7 +57,7 @@ public class MyAddressesTests extends BaseTests{
 		updateAddressPage.stateDropDownManuClick();
 		Thread.sleep(3000);
 		String postalCode = String.valueOf(citacIzExcela.getIntegerData("TC11", 8, 2));
-		//String postalCode = citacIzExcela.getStringData("TC11", 8, 2);
+		
 		updateAddressPage.insertPostalCode(postalCode);
 		String homePhone = citacIzExcela.getStringData("TC11", 9, 2);
 		updateAddressPage.insertHomePhone(homePhone);

@@ -29,9 +29,7 @@ public class MyAccountPage {
     public WebElement getMyWishlistsButton() {  
 		return driver.findElement(By.className("lnk_wishlist"));
 	}
-    //public WebElement getMyWishlistsButton() {
- 	 //  return driver.findElement(By.xpath("//*[@id=\"center_column\"]/div/div[1]/ul/li[5]/a/span"));
-     //}
+    
      public void myWishlistsButtonClick() {
  	  this.getMyWishlistsButton().click();
      }

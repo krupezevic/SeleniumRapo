@@ -20,7 +20,7 @@ public class MyWishlistsPage {
 	WebElement wishlistTableName3;
 	
 	WebElement deleteWishlistButton;
-	//WebElement backToYourAccountButton;
+	
 	WebElement pageBody;
 	public MyWishlistsPage(WebDriver driver) {
 		super();
@@ -69,10 +69,6 @@ public class MyWishlistsPage {
 	public WebElement getPageBody() {
 		return driver.findElement(By.xpath("//body"));
 	}	
-/*
-	public WebElement getBackToYourAccountButton() {
-		return driver.findElement(By.linkText("Back to Your Account"));
-	}*/
 
 	public void enterName(String string) {
 		this.getNameField().sendKeys(string);
@@ -105,10 +101,7 @@ public class MyWishlistsPage {
 	public void pageBodyEnterClick() {
 		this.getPageBody().sendKeys(Keys.ENTER);
 	}
-	/*
-	public void backToYourAccountButtonClick() {
-		this.getBackToYourAccountButton().click();
-	}*/
+
 	public int wishlistCount() {
 		List<WebElement> wishlistList = driver.findElements(By.className("wishlist_delete"));
 		return wishlistList.size();
